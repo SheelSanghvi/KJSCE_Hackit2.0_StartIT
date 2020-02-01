@@ -2,10 +2,15 @@ import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
+from selenium.webdriver.firefox.options import Options
+
+
 
 def GetInfo():
+	options = Options()
+	options.add_argument('--headless')
 	url = 'https://www.startupindia.gov.in/content/sih/en/search.html?roles=Startup&page=0'
-	browser = webdriver.Firefox()
+	browser = webdriver.Firefox(options=options)
 	# url = 'http://winevibe.com/glossary/'
 	browser.get(url)
 	time.sleep(1)  # wait 20 seconds for the site to load.
