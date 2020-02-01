@@ -31,11 +31,11 @@ def GetInfo():
 		image = cards[i].findAll('img')[0]
 		rating=(cards[i].find_all('strong'))[0].get_text()
 		#print(image['src'])
+		dict1['image']=image['src']
 		dict1['Name']=name
 		dict1['Stage']=stage
 		dict1['Location']=location
 		dict1['Type']=filters
-		dict1['image']=image['src']
 		dict1['Rating']=rating
 		list1.append(dict1)
 		
