@@ -1,5 +1,16 @@
 {% extends 'app/layout.html' %}
-<div class="card text-center" style="align: center; width: 18rem; margin-left: auto; margin-right: auto; margin-bottom: 15px">
+{% block content %}
+<div class="bradcam_area bradcam_bg_1">
+    <div class="container">
+        <div class="bradcam_text">
+            <h3>StartUps</h3>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+<div class="card-deck">	
 	{% for o in obj %}
 
 	<div class="col-md-3">
@@ -8,15 +19,17 @@
 			<div style="width : 100%; height: 300px; margin-top: auto; margin-bottom: auto; padding-top:auto; padding-bottom:auto">
 				<!-- <img class="card-img-top" src="{{o.logo}}" alt="No Logo Added" > -->
 			</div>
-				<li class="list-group-item">{{o.id.name}}</li>
-				<li class="list-group-item">{{o.id.type}}</li>
-				<li class="list-group-item"></li>
+				<li class="list-group-item">{{o.name}}</li>
+				<li class="list-group-item">{{o.typee}}</li>
 			</ul>
 		
 		</div>
 	</div>
+		{% endfor %}
+</div>
 </div>
 		<br>
 		<br>
-	{% endfor %}
+
+{% endblock %}
 
