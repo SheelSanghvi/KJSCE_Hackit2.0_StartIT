@@ -4,6 +4,7 @@ from . import forms
 from crispy_forms.helper import FormHelper
 from .forms import *
 from . import scrape
+from . import seeds as newsScrape
 from .models import *
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -31,13 +32,14 @@ def register(request):
 
 def startup(request):
 	final_list=scrape.GetInfo()
+	news_list = newsScrape.GetInfo()
 	for i in final_list:
 		try:
 			Startup.objects.get(name=i['Name'])
 		except Startup.DoesNotExist:
 			Startup.objects.create(name=i['Name'], logo=i['image'], stage=i['Stage'], location=i['Location'], typee= i['Type'], rating= i['Rating'])
 			
-	return render(request, 'app/startup.html', {'final': final_list})
+	return render(request, 'app/startup.html', {'final': final_list,'news':news_list})
 
 
 
