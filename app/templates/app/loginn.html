@@ -1,0 +1,30 @@
+<!doctype html>
+{% extends 'app/layout.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="bradcam_text">
+                <h3>Login</h3>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{form|crispy}}
+
+                            <div>
+                                <button class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!--/ bradcam_area  -->
+
+    
+
+{% endblock %}

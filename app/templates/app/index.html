@@ -1,0 +1,170 @@
+
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+
+{% extends 'app/layout.html' %}
+{% load static %}
+{% block content %}
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="slider_active owl-carousel">
+            <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text ">
+                                <h3>Find Right<br>
+                                        Invest Right</h3>
+                                <div class="video_service_btn">
+                                    <a href="{% url 'register' %}" class="boxed-btn3">Come Explore</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider  d-flex align-items-center slider_bg_2 overlay2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text ">
+                                <h3>All Potential Startups <br>
+                                        Listed Under One Roof</h3>
+                                <div class="video_service_btn">
+                                    <a href="{% url 'register' %}" class="boxed-btn3">Join Us Today</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+<br><br>
+    <p><h1 style="text-align: center;"> Statistics </h1></p>
+    <br>
+
+
+
+    <!-- counter_area  -->
+    <div class="counter_area counter_bg_1 overlay_03">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3">
+                    <div class="single_counter text-center">
+                        <div class="counter_icon">
+                            <img src="{% static 'img/svg_icon/group.svg' %}" alt="">
+                        </div>
+                        <h3> <span class="counter">200</span> <span> +</span> </h3>
+                        <p>StartUps</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3">
+                    <div class="single_counter text-center">
+                        <div class="counter_icon">
+                            <img src="{% static 'img/svg_icon/cart.svg' %}" alt="">
+                        </div>
+                        <h3> <span class="counter">97</span> <span>%</span> </h3>
+                        <p>Investment Success Rate</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3">
+                    <div class="single_counter text-center">
+                        <div class="counter_icon">
+                            <img src="{% static 'img/svg_icon/heart.svg' %}" alt="">
+                        </div>
+                        <h3> <span class="counter">5628</span></h3>
+                        <p>Positive Reviews</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3">
+                    <div class="single_counter text-center">
+                        <div class="counter_icon">
+                            <img src="{% static 'img/svg_icon/respect.svg' %}" alt="">
+                        </div>
+                        <h3> <span class="counter">5637</span> </h3>
+                        <p>Investments Done</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /counter_area  -->
+
+    <br><br>
+    <p><h1 style="text-align: center;"> Reviews</h1></p>
+    <br>
+
+    <div class="testimonial_area overlay ">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="testmonial_active owl-carousel">
+                        <div class="single_carousel">
+                                <div class="single_testmonial text-center">
+                                        <div class="quote">
+                                            <img src="{% static 'img/svg_icon/quote.svg' %}" alt="">
+                                        </div>
+                                        <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor <br> 
+                                                sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque.  <br>
+                                                Fusce ac mattis nulla. Morbi eget ornare dui. </p>
+                                        <div class="testmonial_author">
+                                            <div class="thumb">
+                                                    <img src="{% static 'img/case/testmonial.png' %}" alt="">
+                                            </div>
+                                            <h3>Robert Thomson</h3>
+                                            <span>Business Owner</span>
+                                        </div>
+                                    </div>
+                        </div>
+                        <div class="single_carousel">
+                                <div class="single_testmonial text-center">
+                                        <div class="quote">
+                                            <img src="{% static 'img/svg_icon/quote.svg' %}" alt="">
+                                        </div>
+                                        <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor <br> 
+                                                sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque.  <br>
+                                                Fusce ac mattis nulla. Morbi eget ornare dui. </p>
+                                        <div class="testmonial_author">
+                                            <div class="thumb">
+                                                    <img src="{% static 'img/case/testmonial.png' %}" alt="">
+                                            </div>
+                                            <h3>Robert Thomson</h3>
+                                            <span>Business Owner</span>
+                                        </div>
+                                    </div>
+                        </div>
+                        <div class="single_carousel">
+                                <div class="single_testmonial text-center">
+                                        <div class="quote">
+                                            <img src="{% static 'img/svg_icon/quote.svg' %}" alt="">
+                                        </div>
+                                        <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor <br> 
+                                                sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque.  <br>
+                                                Fusce ac mattis nulla. Morbi eget ornare dui. </p>
+                                        <div class="testmonial_author">
+                                            <div class="thumb">
+                                                    <img src="{% static 'img/case/testmonial.png' %}" alt="">
+                                            </div>
+                                            <h3>Robert Thomson</h3>
+                                            <span>Business Owner</span>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   
+
+    
+{% endblock %}
+
+
+    

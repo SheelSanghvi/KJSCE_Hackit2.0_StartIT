@@ -35,7 +35,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 	gender= models.CharField(choices= GENDER, max_length=15)
 	phone_regex=RegexValidator(regex = r'^\+?1?\d{9,10}$' ,message='Phone number must be valid')
 	phone= models.CharField(validators=[phone_regex], max_length=10, blank=True, null=True, default=None)
-	logo=models.ImageField(upload_to="profile_photo",blank=True, null=True)
+	logo=models.ImageField(upload_to="media/",blank=True, null=True)
 	date_joined = models.DateTimeField(auto_now_add=True)
 	is_staff= models.BooleanField(default=False)
 	is_active= models.BooleanField(default=True)

@@ -1,0 +1,66 @@
+<!doctype html>
+{% extends 'app/layout.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="bradcam_text">
+                <h3>Register</h3>
+                <div class="row">
+                    <div class="col-sm-8">
+                    	<div class="form-actions">
+                        <form method="POST" novalidate enctype= "multipart/form-data">
+						    {% csrf_token %}
+						    <div class="row">
+						      <div class="col-7">
+						        {{ form.email|as_crispy_field }}
+						      </div>
+						      <div class="col-5">
+						      	{{ form.phone|as_crispy_field }}
+						      </div>
+						    </div>
+						    <div class="row">
+						      <div class="col-6">
+						        {{ form.f_name|as_crispy_field }}
+						      </div>
+						      <div class="col-6">
+						        {{ form.l_name|as_crispy_field }}
+						      </div>
+						    </div>
+						    <div class="row">
+						    	<div class="col-4">
+						        {{ form.age|as_crispy_field }}
+						      </div>
+						      <div class="col-4">
+						        {{ form.gender|as_crispy_field }}
+						      </div>
+						      <div class="col-4">
+						        {{ form.logo|as_crispy_field }}
+						      </div>
+						    </div>
+						    <div class="row">
+						      <div class="col-6">
+						        {{ form.password|as_crispy_field }}
+						      </div>
+						      <div class="col-6">
+						        {{ form.confirm_password|as_crispy_field }}
+						      </div>
+						    </div>
+
+
+						    <button type="submit" class="btn btn-success">Submit</button>
+						</form>
+						<br>
+						<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!--/ bradcam_area  -->
+
+    
+
+{% endblock %}

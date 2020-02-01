@@ -1,0 +1,127 @@
+.counter_area{
+    background-size: cover;
+    background-position: center center ;
+    background-repeat: no-repeat;
+    padding: 135px 0 105px 0;
+    .single_counter{
+        margin-bottom: 30px;
+       .counter_icon{
+
+       }
+       h3{
+        margin-top: 40px;
+        margin-bottom: 15px;
+        span{
+            font-size: 46px;
+            font-weight: 300;
+            color: #fff;
+        }
+       }
+       p{
+        font-weight: 15px;
+        color: #E8E8E8;
+        margin-bottom: 0;
+       }
+    }
+}
+.counter_bg_1{
+    background-image: url(../img/about/counter.png);
+}
+
+.case_study_area{
+    padding-top: 100px;
+    @media #{$mobile_device} {
+        padding-top: 50px;
+    }
+    &.case_page{
+        padding-bottom: 100px;
+        @media #{$mobile_device} {
+            padding-bottom: 50px;
+        }
+        .single_case{
+            margin-bottom: 40px;
+        }
+    }
+    .border_bottom {
+        border-bottom: 1px solid #E8E8E8;
+        margin-bottom: 50px;
+        padding-bottom: 60px;
+    }
+   .single_case{
+       @include box-shadow( 0 3px 6px rgba(0,0,0,.05));
+       margin-bottom: 60px;
+       @include border-radius(10px);
+       overflow: hidden;
+       .case_thumb{
+           overflow: hidden;
+           
+           img{
+            width: 100%;
+            @include transform(scale(1));
+            @include transition(.3s);
+           }
+       }
+       .case_heading{
+            padding: 25px 29px;
+        span{
+            color: #919191;
+            font-size: 13px;
+            font-weight: 400;
+        }
+        h3{
+            a{
+                font-weight: 500;
+                color: #001D38;
+                font-size: 18px;
+                &:hover{
+                    color: #5DB2FF;
+                }
+            }
+        }
+       }
+
+       &:hover{
+        .case_thumb{
+            overflow: hidden;
+            
+            img{
+             width: 100%;
+             @include transform(scale(1.05));
+            }
+        }
+       }
+   } 
+
+   .owl-carousel .owl-nav div{
+    border: 1px solid #E3E3E3 ;
+    color: #DDDBDB;
+    left: -70px;
+   }
+   .owl-carousel .owl-nav div.owl-next {
+    left: auto;
+    right: -70px;
+}
+}
+
+.portfolio-menu{
+    margin-bottom: 40px;
+    button{
+        font-size: 15px;
+        font-weight: 400;
+        color: #1F1F1F;
+        border: none;
+        background: transparent;
+        border: 1px solid transparent;
+        padding: 5px 17px;
+        margin: 0 2px;
+        @include border-radius(30px);
+        cursor: pointer;
+        &.active{
+            border: 1px solid #5DB2FF;
+            color: #5DB2FF;
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+}
