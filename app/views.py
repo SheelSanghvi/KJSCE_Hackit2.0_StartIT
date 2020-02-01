@@ -56,6 +56,6 @@ def save(request):
 	return render(request, 'app/startup.html')
 
 def watchLater(request):
-	obj = Startup.objects.filter(user=request.user)
+	obj = Startup.objects.filter(user__id=request.user.id)
 	print(obj)
 	return render(request, 'app/watchLater.html', {'obj': obj})
