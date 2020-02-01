@@ -42,7 +42,6 @@ class User(AbstractBaseUser, PermissionsMixin):
 	is_superuser= models.BooleanField(default=False)
 
 
-
 	objects = UserManager()
 
 	USERNAME_FIELD = 'email' 
@@ -62,4 +61,9 @@ class Startup(models.Model):
 	location=models.CharField(max_length=100, blank=True, null=True)
 	rating=models.IntegerField(blank=True, null=True)
 	typee=models.CharField(max_length=100, blank=True, null=True)
+	user= models.ManyToManyField(User)
 
+	def __str__(self):
+		return self.name
+
+	

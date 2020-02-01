@@ -1,0 +1,37 @@
+{% extends 'app/layout.html' %}
+{% block content %}
+<div class="bradcam_area bradcam_bg_1">
+    <div class="container">
+        <div class="bradcam_text">
+            <h3>Your Saved StartUps!</h3>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+{% for o in obj %}
+<div class="col-sm-3">
+<div class="card" style="width: 18rem; align: center; width: 18rem; margin-left: auto; margin-right: auto; margin-bottom: 15px">
+  <ul class="list-group list-group-flush">
+  	<div style="width : 100%; height: 300px; margin-top: auto; margin-bottom: auto; padding-top:auto; padding-bottom:auto">
+		<img class="card-img-top" src="{{o.logo}}" alt="No Logo Added" >
+	</div>
+    <li class="list-group-item">{{o.name}}</li>
+    <li class="list-group-item">{{o.typee}}</li>
+    <li class="list-group-item">{{o.location}}</li>
+    <li class="list-group-item">{{o.stage}}</li>
+    <li class="list-group-item">{{o.rating}}</li>
+  </ul>
+</div>
+</div>
+{% endfor %}
+</div>
+
+
+<br>
+<br>
+<hr>
+
+{% endblock %}
+
