@@ -1,9 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-logouttt
-</body>
-</html>
+{% extends 'app/layout.html' %}
+{% block content %}
+<div class="bradcam_area bradcam_bg_1">
+    <div class="container">
+        <div class="bradcam_text">
+            <h3>You Have Succesfully Logged Out</h3>
+            <br>
+            <h3><a href= {% url 'home' %}>Go to Homepage</a></h3>
+        </div>
+    </div>
+</div>
+{% endblock %}

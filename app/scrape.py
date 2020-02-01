@@ -39,5 +39,6 @@ def GetInfo():
 		dict1['Rating']=rating
 		list1.append(dict1)
 		
-# 	return list1
-# #browser.close()
+	
+	browser.close()
+	return list1

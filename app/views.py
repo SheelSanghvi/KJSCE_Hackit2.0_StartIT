@@ -33,28 +33,28 @@ def register(request):
 
 @login_required
 def startup(request):
-	# final_list=scrape.GetInfo()
-	final_list= [{'Name': 'first', 'Type': '1'}, {'Name': 'second', 'Type': '2'}, {'Name': 'third', 'Type': '3'}
-	]
+	final_list=scrape.GetInfo()
 	for i in final_list:
 		try:
 			Startup.objects.get(name=i['Name'])
 		except Startup.DoesNotExist:
-			Startup.objects.create(name=i['Name'], typee= i['Type']) #logo=i['image'], stage=i['Stage'], location=i['Location'],  rating= i['Rating'])
+			Startup.objects.create(name=i['Name'], typee= i['Type'], logo=i['image'], stage=i['Stage'], location=i['Location'],  rating= i['Rating'])
 			
 	return render(request, 'app/startup.html', {'final': final_list})
 
 
 @login_required
 def save(request):
+	final_list=scrape.GetInfo()
 	if request.method == "POST":
 		y = request.POST['x']
 		print(y)
 		obj= Startup.objects.get(name=y)
 		obj.user.add(request.user.id)
 		obj.save()
-	return render(request, 'app/startup.html')
+	return render(request, 'app/startup.html', {'final': final_list})
 
+@login_required
 def watchLater(request):
 	obj = Startup.objects.filter(user__id=request.user.id)
 	print(obj)
