@@ -22,7 +22,7 @@ def GetInfo():
 	#print(cards)
 	#print("\n\n\n")
 	list1=[]
-	for i in range(0,8):
+	for i in range(0,9):
 		dict1={}
 		name=(cards[i].find_all('h3')[0]).get_text()
 		stage=(cards[i].find_all('span',class_='highlighted-text'))[0].get_text()

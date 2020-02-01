@@ -35,7 +35,7 @@ def register(request):
 @login_required
 def startup(request):
 	final_list=scrape.GetInfo()
-	news_list = newsScrape.GetInfo()
+	news_list = newsScrape.getInfo()
 	for i in final_list:
 		try:
 			Startup.objects.get(name=i['Name'])

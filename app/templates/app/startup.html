@@ -25,6 +25,7 @@
 				<li class="list-group-item">{{d}} : {{k}}</li>
 			{% endif %}
 		{% endfor %}
+		<li>{{ news }}</li>
 		<li class="list-group-item"><form type="hidden" method="POST" action="{% url 'save' %}">{% csrf_token %}<input type="hidden" name="x" value="{{i.Name}}"><input type="submit" value="Watch Later" class="btn btn-info btn-md btn-block" align="center"></form></li>
 	</ul>
 		
