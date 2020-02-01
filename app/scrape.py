@@ -17,7 +17,7 @@ def GetInfo():
 	#print(cards)
 	#print("\n\n\n")
 	list1=[]
-	for i in range(0,5):
+	for i in range(0,8):
 		dict1={}
 		name=(cards[i].find_all('h3')[0]).get_text()
 		stage=(cards[i].find_all('span',class_='highlighted-text'))[0].get_text()
@@ -26,12 +26,12 @@ def GetInfo():
 		image = cards[i].findAll('img')[0]
 		rating=(cards[i].find_all('strong'))[0].get_text()
 		#print(image['src'])
-		dict1['name']=name
-		dict1['stage']=stage
-		dict1['location']=location
-		dict1['filters']=filters
+		dict1['Name']=name
+		dict1['Stage']=stage
+		dict1['Location']=location
+		dict1['Type']=filters
 		dict1['image']=image['src']
-		dict1['rating']=rating
+		dict1['Rating']=rating
 		list1.append(dict1)
 		
 	return list1

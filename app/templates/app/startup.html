@@ -1,0 +1,38 @@
+{% extends 'app/layout.html' %}
+{% block content %}
+
+<div class="bradcam_area bradcam_bg_1">
+    <div class="container">
+        <div class="bradcam_text">
+            <h3>StartUps</h3>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+<div class="card-deck">
+	{% for i in final %}
+	<div class="col-md-3">
+		<div class="card text-center" style="align: center; width: 18rem; margin-left: auto; margin-right: auto; margin-bottom: 15px">
+		{% for d,k in i.items %}
+			<ul class="list-group list-group-flush">
+			{% if d == 'image' %}
+			<div style="width : 100%; height: 300px; margin-top: auto; margin-bottom: auto; padding-top:auto; padding-bottom:auto">
+				<img class="card-img-top" src="{{k}}" alt="No Logo Added" >
+			</div>
+			{% else %}
+				<li class="list-group-item">{{d}} : {{k}}</li>
+				<br>
+			{% endif %}
+			</ul>
+		{% endfor %}
+		</div>
+	</div>
+		<br>
+		<br>
+	{% endfor %}
+</div>
+</div>
+<hr>
+{% endblock %}

@@ -52,9 +52,14 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 
 class Startup(models.Model):
-	name= models.CharField(max_length=30)
+	name= models.CharField(max_length=30, unique=True)
 	logo=models.ImageField(upload_to="profile_photo",blank=True, null=True)
-	project= models.TextField()
+	project= models.TextField(blank=True, null=True)
 	phone_regex=RegexValidator(regex = r'^\+?1?\d{9,10}$' ,message='Phone number must be valid')
 	phone= models.CharField(validators=[phone_regex], max_length=10, blank=True, null=True, default=None)
-	email= models.EmailField(unique=True)
+	email= models.EmailField(unique=True, blank=True, null=True)
+	stage=models.CharField(max_length=100, blank=True, null=True)
+	location=models.CharField(max_length=100, blank=True, null=True)
+	rating=models.IntegerField(blank=True, null=True)
+	typee=models.CharField(max_length=100, blank=True, null=True)
+
