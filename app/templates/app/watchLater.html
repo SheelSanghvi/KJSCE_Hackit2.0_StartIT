@@ -1,0 +1,22 @@
+{% extends 'app/layout.html' %}
+<div class="card text-center" style="align: center; width: 18rem; margin-left: auto; margin-right: auto; margin-bottom: 15px">
+	{% for o in obj %}
+
+	<div class="col-md-3">
+		<div class="card text-center" style="align: center; width: 18rem; margin-left: auto; margin-right: auto; margin-bottom: 15px">
+			<ul class="list-group list-group-flush">
+			<div style="width : 100%; height: 300px; margin-top: auto; margin-bottom: auto; padding-top:auto; padding-bottom:auto">
+				<!-- <img class="card-img-top" src="{{o.logo}}" alt="No Logo Added" > -->
+			</div>
+				<li class="list-group-item">{{o.id.name}}</li>
+				<li class="list-group-item">{{o.id.type}}</li>
+				<li class="list-group-item"></li>
+			</ul>
+		
+		</div>
+	</div>
+</div>
+		<br>
+		<br>
+	{% endfor %}
+

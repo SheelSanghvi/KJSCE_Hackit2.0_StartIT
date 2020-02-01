@@ -6,6 +6,9 @@ from .forms import *
 from . import scrape
 from .models import *
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.decorators import login_required
+import json 
+import ast 
 
 # Create your views here.
 final_list=[]
@@ -28,18 +31,31 @@ def register(request):
 	return render(request, 'app/register.html', {'form': form})	
 	
 
-
+@login_required
 def startup(request):
-	final_list=scrape.GetInfo()
+	# final_list=scrape.GetInfo()
+	final_list= [{'Name': 'first', 'Type': '1'}, {'Name': 'second', 'Type': '2'}, {'Name': 'third', 'Type': '3'}
+	]
 	for i in final_list:
 		try:
 			Startup.objects.get(name=i['Name'])
 		except Startup.DoesNotExist:
-			Startup.objects.create(name=i['Name'], logo=i['image'], stage=i['Stage'], location=i['Location'], typee= i['Type'], rating= i['Rating'])
+			Startup.objects.create(name=i['Name'], typee= i['Type']) #logo=i['image'], stage=i['Stage'], location=i['Location'],  rating= i['Rating'])
 			
 	return render(request, 'app/startup.html', {'final': final_list})
 
 
+@login_required
+def save(request):
+	if request.method == "POST":
+		y = request.POST['x']
+		print(y)
+		obj= Startup.objects.get(name=y)
+		obj.user.add(request.user.id)
+		obj.save()
+	return render(request, 'app/startup.html')
 
-
-
+def watchLater(request):
+	obj = Startup.objects.filter(user=request.user.id)
+	print(obj)
+	return render(request, 'app/watchLater.html', {'obj': obj})

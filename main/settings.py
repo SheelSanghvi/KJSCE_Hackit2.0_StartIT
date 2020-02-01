@@ -124,7 +124,7 @@ MEDIA_URL= '/media/'
 
 STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-LOGIN_REDIRECT_URL ='home'
+LOGIN_REDIRECT_URL ='startup'
 LOGIN_URL= 'login'
 
 STATICFILES_DIRS = [
