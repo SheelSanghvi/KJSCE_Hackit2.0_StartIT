@@ -7,6 +7,8 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>StartIt</title>
+    <link rel = "icon" href ="{% static 'logo.png' %}"
+        type = "logo/x-icon">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -88,7 +90,7 @@
                                             <li><a class="active" href="{% url 'home' %}">home</a></li>
                                             <li><a href="{% url 'startup' %}">startups</a>
                                             </li>
-                                            
+
                                             <li><a href="#">Contact</a></li>
                                             {% if user.is_authenticated %}
                                             <li><a href="{% url 'watchLater' %}">Dashboard</a></li>
