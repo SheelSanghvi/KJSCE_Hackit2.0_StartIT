@@ -10,7 +10,7 @@ from selenium.webdriver.firefox.options import Options
 def GetInfo():
 	options = Options()
 	options.add_argument('--headless')
-	url = 'https://www.startupindia.gov.in/content/sih/en/search.html?roles=Startup&page=0'
+	url = 'https://www.startupindia.gov.in/content/sih/en/search.html?roles=Startup&page=10'
 	browser = webdriver.Firefox(options=options)
 	# url = 'http://winevibe.com/glossary/'
 	browser.get(url)
@@ -24,7 +24,8 @@ def GetInfo():
 	#print("\n\n\n")
 	list1=[]
 	news_list = newsScrape.getInfo()
-	for i in range(0,9):
+	i=0
+	while True:
 		dict1={}
 		name=(cards[i].find_all('h3')[0]).get_text()
 		stage=(cards[i].find_all('span',class_='highlighted-text'))[0].get_text()
@@ -33,15 +34,20 @@ def GetInfo():
 		image = cards[i].findAll('img')[0]
 		rating=(cards[i].find_all('strong'))[0].get_text()
 		#print(image['src'])
-		dict1['image']=image['src']
-		dict1['Name']=name
-		dict1['Stage']=stage
-		dict1['Location']=location
-		dict1['Type']=filters
-		dict1['Rating']=rating
-		dict1['News']=news_list[i]
-		list1.append(dict1)
-		
+		if image['src'] is not 'etc/designs/invest-india/investindialibs/images/user_default_pic.jpeg':
+
+			dict1['image']=image['src']
+			dict1['Name']=name
+			dict1['Stage']=stage
+			dict1['Location']=location
+			dict1['Type']=filters
+			dict1['Rating']=rating
+			dict1['News']=news_list[i]
+			list1.append(dict1)
+			i=i+1
+		if i>=9:
+			break
+
 	
 	browser.close()
 	return list1
