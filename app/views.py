@@ -39,7 +39,7 @@ def startup(request):
 		try:
 			Startup.objects.get(name=i['Name'])
 		except Startup.DoesNotExist:
-			Startup.objects.create(name=i['Name'], typee= i['Type'], logo=i['image'], stage=i['Stage'], location=i['Location'],  rating= i['Rating'])
+			Startup.objects.create(name=i['Name'], typee= i['Type'], logo=i['image'], stage=i['Stage'], location=i['Location'],  rating= i['Rating'], news=i['News'])
 			
 	return render(request, 'app/startup.html', {'final': final_list})
 
