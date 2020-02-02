@@ -35,14 +35,13 @@ def register(request):
 @login_required
 def startup(request):
 	final_list=scrape.GetInfo()
-	news_list = newsScrape.getInfo()
 	for i in final_list:
 		try:
 			Startup.objects.get(name=i['Name'])
 		except Startup.DoesNotExist:
 			Startup.objects.create(name=i['Name'], typee= i['Type'], logo=i['image'], stage=i['Stage'], location=i['Location'],  rating= i['Rating'])
 			
-	return render(request, 'app/startup.html', {'final': final_list,'news':news_list})
+	return render(request, 'app/startup.html', {'final': final_list})
 
 
 @login_required
