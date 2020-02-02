@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
+from . import seeds as newsScrape
 from selenium.webdriver.firefox.options import Options
 
 
@@ -22,6 +23,7 @@ def GetInfo():
 	#print(cards)
 	#print("\n\n\n")
 	list1=[]
+	news_list = newsScrape.getInfo()
 	for i in range(0,9):
 		dict1={}
 		name=(cards[i].find_all('h3')[0]).get_text()
@@ -37,6 +39,7 @@ def GetInfo():
 		dict1['Location']=location
 		dict1['Type']=filters
 		dict1['Rating']=rating
+		dict1['News']=news_list[i]
 		list1.append(dict1)
 		
 	
